@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Main" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/tb_dark_green</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+    </style>
+
+    <style name="Theme.Main.Translucent" parent="Theme.Main">
+        <item name="toolbarStyle">@style/ToolbarStyle.Trans</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+</resources>

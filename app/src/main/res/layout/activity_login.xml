@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:id="@+id/rl"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_paper"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:id="@+id/background"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#A6424242"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/background2"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:background="#A6424242"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <include
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:background="@color/transparent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="91dp" />
+
+    <TextView
+        android:id="@+id/white_bg"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/background_rounded_button"
+        android:layout_alignTop="@+id/button_login"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="@drawable/ic_evernote2"
+        android:layout_marginBottom="19dp"
+        android:layout_above="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/background2"
+        android:layout_alignParentStart="true"
+        android:text="B I N D E R"
+        android:textColor="#fafafa"
+        android:textSize="85sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/background2"
+        android:layout_alignBottom="@+id/background2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:text="BY THE STUDENTS, FOR THE STUDENTS"
+        android:textColor="#fafafa"
+        android:textSize="14sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/white_bg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="CONNECT WITH EVERNOTE"
+        android:textAlignment="center"
+        android:textColor="#FAFAFA" />
+
+</RelativeLayout>

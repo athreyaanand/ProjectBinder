@@ -15,8 +15,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.notey.projectbinder.R;
+import com.notey.projectbinder.fragment.ClassesFragment;
 import com.notey.projectbinder.fragment.note.CreateNoteDialogFragment;
 import com.notey.projectbinder.fragment.note.NoteContainerFragment;
 import com.notey.projectbinder.fragment.notebook.NotebookTabsFragment;
@@ -27,9 +29,6 @@ import com.evernote.edam.type.User;
 
 import net.vrallev.android.task.TaskResult;
 
-/**
- * @author rwondratschek
- */
 public class MainActivity extends AppCompatActivity {
 
     private static final String KEY_SELECTED_NAV_ITEM = "KEY_SELECTED_NAV_ITEM";
@@ -157,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
         mUser = user;
         if (user != null) {
             //mTextViewUserName.setText(user.getUsername());
+            Toast.makeText(this, "User: "+user.getName(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -179,6 +179,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_item_notebooks:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new NotebookTabsFragment())
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                        .commit();
+                break;
+
+            case R.id.nav_item_classes:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new ClassesFragment())
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                         .commit();
                 break;

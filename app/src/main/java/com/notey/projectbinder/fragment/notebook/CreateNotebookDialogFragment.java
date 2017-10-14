@@ -14,9 +14,6 @@ import android.view.View;
 import com.notey.projectbinder.R;
 import com.notey.projectbinder.task.CreateNewNotebookTask;
 
-/**
- * @author rwondratschek
- */
 public class CreateNotebookDialogFragment extends DialogFragment {
 
     public static final String TAG = "CreateNotebookDialogFragment";

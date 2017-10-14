@@ -4,18 +4,7 @@ import android.app.Application;
 
 import com.evernote.client.android.EvernoteSession;
 
-/**
- * @author rwondratschek
- */
-public class DemoApp extends Application {
-
-    /*
-     * ********************************************************************
-     * You MUST change the following values to run this sample application.
-     *
-     * It's recommended to pass in these values via gradle property files.
-     * ********************************************************************
-     */
+public class MasterApp extends Application {
 
     /*
      * Your Evernote API key. See http://dev.evernote.com/documentation/cloud/
@@ -24,10 +13,7 @@ public class DemoApp extends Application {
     private static final String CONSUMER_KEY = "athreyaanand";
     private static final String CONSUMER_SECRET = "acd7ab4f6c4f5250";
 
-    /*
-     * Initial development is done on Evernote's testing service, the sandbox.
-     *
-     * Change to PRODUCTION to use the Evernote production service
+    /* Change to PRODUCTION to use the Evernote production service
      * once your code is complete.
      */
     private static final EvernoteSession.EvernoteService EVERNOTE_SERVICE = EvernoteSession.EvernoteService.SANDBOX;

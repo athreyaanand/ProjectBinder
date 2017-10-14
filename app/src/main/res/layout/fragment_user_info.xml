@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0"
             android:gravity="center_vertical"
-            tools:text="10.4 MB"/>
+            tools:text="10.4 MB" />
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             tools:max="100"
-            tools:progress="50"/>
+            tools:progress="50" />
 
         <TextView
             android:id="@+id/textView_upload_max"
@@ -41,7 +41,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0"
             android:gravity="center_vertical"
-            tools:text="10.4 MB"/>
+            tools:text="10.4 MB" />
     </LinearLayout>
 
     <LinearLayout

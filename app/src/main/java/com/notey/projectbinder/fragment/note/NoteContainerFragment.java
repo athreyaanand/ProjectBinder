@@ -27,9 +27,6 @@ import net.vrallev.android.task.TaskResult;
 
 import java.util.List;
 
-/**
- * @author rwondratschek
- */
 public class NoteContainerFragment extends AbstractContainerFragment {
 
     private static final int MAX_NOTES = 20;

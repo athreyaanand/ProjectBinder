@@ -6,11 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -22,10 +24,12 @@
         <item name="android:elevation" tools:ignore="NewApi">2dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="ToolbarStyle.Trans">
         <item name="android:paddingTop">@dimen/status_bar_padding</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="GreenToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -36,12 +40,14 @@
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
         <item name="actionMenuTextColor">@color/tb_dark_green</item>
         <item name="drawerArrowStyle">@style/Widget.AppCompat.DrawerArrowToggle</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="ActionModeGray" parent="Widget.AppCompat.ActionMode">
         <item name="background">@color/tb_action_mode_gray</item>
         <item name="backgroundSplit">@color/tb_action_mode_gray</item>
         <item name="titleTextStyle">@style/ActionModeTitleDarkGreen</item>
+        <item name="android:windowTranslucentStatus">true</item>
         <!--<item name="android:subtitleTextStyle">@android:style/TextAppearance.Widget.ActionMode.Subtitle</item>-->
     </style>
 
@@ -68,6 +74,7 @@
         <item name="android:textColor">@color/tb_bg</item>
         <item name="android:textStyle">bold</item>
         <item name="textAllCaps">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
 

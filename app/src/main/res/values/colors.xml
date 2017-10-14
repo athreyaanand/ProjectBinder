@@ -14,4 +14,6 @@
     <color name="grey_background_pressed">#ff969696</color>
     <color name="grey_background_selected">#ffe5e5e5</color>
     <color name="grey_background">#eeeeee</color>
+
+    <color name="transparent">#00F0F8FF</color>
 </resources>

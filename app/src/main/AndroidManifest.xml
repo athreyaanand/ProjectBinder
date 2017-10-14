@@ -11,7 +11,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Demo.Translucent">
+            android:theme="@style/Theme.Main.Translucent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -21,20 +21,20 @@
         <activity
             android:name=".activity.UserInfoActivity"
             android:label="@string/user_info"
-            android:theme="@style/Theme.Demo"/>
+            android:theme="@style/Theme.Main"/>
 
         <activity
             android:name=".activity.LoginActivity"
             android:label="@string/label_login"
-            android:theme="@style/Theme.Demo"/>
+            android:theme="@style/Theme.Main"/>
 
         <activity
             android:name=".activity.NotesActivity"
-            android:theme="@style/Theme.Demo"/>
+            android:theme="@style/Theme.Main"/>
 
         <activity
             android:name=".activity.ViewHtmlActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/Theme.Demo"/>
+            android:theme="@style/Theme.Main"/>
     </application>
 </manifest>

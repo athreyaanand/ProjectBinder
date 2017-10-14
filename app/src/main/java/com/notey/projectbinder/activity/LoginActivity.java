@@ -2,18 +2,18 @@ package com.notey.projectbinder.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.evernote.client.android.EvernoteSession;
 import com.evernote.client.android.login.EvernoteLoginFragment;
 import com.notey.projectbinder.R;
 
-/**
- * @author rwondratschek
- */
 public class LoginActivity extends AppCompatActivity implements EvernoteLoginFragment.ResultCallback {
 
     public static void launch(Activity activity) {

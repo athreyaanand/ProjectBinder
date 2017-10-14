@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.buttonOpenSandbox);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SandboxActivity.class);
+                Intent intent = new Intent(MainActivity.this, PhotoActivity.class);
                 startActivity(intent);
             }
         });

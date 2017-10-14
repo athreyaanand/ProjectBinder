@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.notey.projectbinder">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera2.full" />
 
     <application
         android:allowBackup="true"
@@ -20,6 +23,8 @@
         </activity>
         <activity android:name=".SandboxActivity"
             android:label="@string/sandbox"></activity>
+        <activity android:name=".PhotoActivity"></activity>
+        <activity android:name=".ImagePreviewActivity"></activity>
     </application>
     <supports-screens
         android:anyDensity="true"
@@ -29,7 +34,6 @@
         android:smallScreens="true" />
 
     <uses-sdk android:minSdkVersion="8" />
-    <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature
         android:name="android.hardware.camera"

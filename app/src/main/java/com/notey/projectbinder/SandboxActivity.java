@@ -1,41 +1,44 @@
 package com.notey.projectbinder;
 
-        import android.app.Activity;
-        import android.content.res.AssetManager;
-        import android.graphics.Bitmap;
-        import android.graphics.BitmapFactory;
-        import android.os.Bundle;
-        import android.util.Log;
-        import android.view.SurfaceView;
-        import android.view.WindowManager;
-        import android.widget.TextView;
+import android.app.Activity;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Camera;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.SurfaceView;
+import android.view.WindowManager;
+import android.widget.TextView;
 
-        import org.opencv.android.BaseLoaderCallback;
-        import org.opencv.android.CameraBridgeViewBase;
-        import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
-        import org.opencv.android.LoaderCallbackInterface;
-        import org.opencv.android.OpenCVLoader;
-        import org.opencv.android.Utils;
-        import org.opencv.core.Core;
-        import org.opencv.core.DMatch;
-        import org.opencv.core.Mat;
-        import org.opencv.core.MatOfByte;
-        import org.opencv.core.MatOfDMatch;
-        import org.opencv.core.MatOfKeyPoint;
-        import org.opencv.core.MatOfPoint;
-        import org.opencv.core.MatOfPoint2f;
-        import org.opencv.core.Scalar;
-        import org.opencv.features2d.DescriptorExtractor;
-        import org.opencv.features2d.DescriptorMatcher;
-        import org.opencv.features2d.FeatureDetector;
-        import org.opencv.features2d.Features2d;
-        import org.opencv.imgproc.Imgproc;
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.CameraBridgeViewBase.CvCameraViewFrame;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.android.Utils;
+import org.opencv.core.Core;
+import org.opencv.core.DMatch;
+import org.opencv.core.Mat;
+import org.opencv.core.MatOfByte;
+import org.opencv.core.MatOfDMatch;
+import org.opencv.core.MatOfKeyPoint;
+import org.opencv.core.MatOfPoint;
+import org.opencv.core.MatOfPoint2f;
+import org.opencv.core.Point;
+import org.opencv.core.Rect;
+import org.opencv.core.Scalar;
+import org.opencv.features2d.DescriptorExtractor;
+import org.opencv.features2d.DescriptorMatcher;
+import org.opencv.features2d.FeatureDetector;
+import org.opencv.features2d.Features2d;
+import org.opencv.imgproc.Imgproc;
 
-        import java.io.IOException;
-        import java.io.InputStream;
-        import java.util.ArrayList;
-        import java.util.LinkedList;
-        import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 
 public class SandboxActivity extends Activity implements CameraBridgeViewBase.CvCameraViewListener2 {
@@ -145,7 +148,7 @@ public class SandboxActivity extends Activity implements CameraBridgeViewBase.Cv
     public Mat recognize(Mat aInputFrame) {
         Mat grayScale = new Mat();
         Imgproc.cvtColor(aInputFrame, grayScale, Imgproc.COLOR_RGB2GRAY);
-        Scalar lowerThreshold = new Scalar ( 200, 200, 200 );
+        Scalar lowerThreshold = new Scalar ( 180, 180, 150 );
         Scalar upperThreshold = new Scalar ( 255, 255, 255 );
         Mat maskMat = new Mat();
         Core.inRange ( grayScale, lowerThreshold , upperThreshold, maskMat );
@@ -153,16 +156,27 @@ public class SandboxActivity extends Activity implements CameraBridgeViewBase.Cv
         Imgproc.dilate ( maskMat, dilatedMat, new Mat() );
         ArrayList<MatOfPoint> contours = new ArrayList<MatOfPoint>();
         Imgproc.findContours ( dilatedMat, contours, new Mat(), Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE );
-        MatOfPoint[] contours_poly = new MatOfPoint[contours.size()];
-        for ( int i=0; i < contours.size(); i++ ) {
-            Imgproc.approxPolyDP((MatOfPoint2f) contours.get(i), (MatOfPoint2f) contours_poly[i], 3, true );
-            Imgproc.drawContours (aInputFrame, contours, i, new Scalar (0, 255, 0), 5);
-        }
-        double epsilon = 0.1*
-        Imgproc.boundingRect(contours);
-        Imgproc.contourArea(dilatedMat);
+        //For each contour found
+        for (int i=0; i<contours.size(); i++)
+        {
+            //Convert contours(i) from MatOfPoint to MatOfPoint2f
+            MatOfPoint2f contour2f = new MatOfPoint2f( contours.get(i).toArray() );
+            MatOfPoint2f approxCurve = new MatOfPoint2f();
+            //Processing on mMOP2f1 which is in type MatOfPoint2f
+            double approxDistance = Imgproc.arcLength(contour2f, true)*0.02;
+            Imgproc.approxPolyDP(contour2f, approxCurve, approxDistance, true);
 
-        return dilatedMat;
+            //Convert back to MatOfPoint
+            MatOfPoint points = new MatOfPoint( approxCurve.toArray() );
+
+            // Get bounding rect of contour
+            Rect rect = Imgproc.boundingRect(points);
+
+            // draw enclosing rectangle (all same color, but you could use variable i to make them unique)
+            Imgproc.rectangle(aInputFrame, new Point (rect.x, rect.y), new Point(rect.x+rect.width,rect.y+rect.height) , new Scalar(255, 0, 0, 255), 3);
+        }
+
+        return aInputFrame;
     }
 
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {

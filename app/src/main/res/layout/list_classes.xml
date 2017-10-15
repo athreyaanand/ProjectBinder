@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:orientation="horizontal"
-    android:background="#616161"
+    android:background="#FAFAFA"
     android:padding="@dimen/fab_margin">
 
     <ImageView
@@ -16,11 +16,12 @@
 
     <TextView
         android:id="@+id/className"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="MATH 1554"
         android:textSize="25dp"
-        android:text="Math 1554" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/timePeriod"

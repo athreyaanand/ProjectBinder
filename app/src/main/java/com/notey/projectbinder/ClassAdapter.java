@@ -10,38 +10,30 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by athreyaanand on 10/14/17.
- */
+import java.util.ArrayList;
 
 public class ClassAdapter extends BaseAdapter {
-    String [] result;
+    ArrayList<Classperiod> classes;
     Context context;
-    int [] imageId;
     private static LayoutInflater inflater=null;
-    public ClassAdapter(Activity mainActivity, String[] prgmNameList, int[] prgmImages) {
-        // TODO Auto-generated constructor stub
-        result=prgmNameList;
-        context=mainActivity;
-        imageId=prgmImages;
+    public ClassAdapter(Activity context, ArrayList<Classperiod> classes) {
+        this.classes=classes;
+        this.context=context;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
     @Override
     public int getCount() {
-        // TODO Auto-generated method stub
-        return result.length;
+        return classes.size();
     }
 
     @Override
     public Object getItem(int position) {
-        // TODO Auto-generated method stub
-        return position;
+        return classes.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        // TODO Auto-generated method stub
         return position;
     }
 
@@ -52,19 +44,23 @@ public class ClassAdapter extends BaseAdapter {
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
-        Holder holder=new Holder();
+        Holder holder = new Holder();
         View rowView;
-        rowView = inflater.inflate(R.layout.list_classes, null);
-        holder.tv=(TextView) rowView.findViewById(R.id.className);
-        holder.img=(ImageView) rowView.findViewById(R.id.subjectImg);
-        holder.tv.setText(result[position]);
-        holder.img.setImageResource(imageId[position]);
+        if(classes.get(position).getName()==null && classes.get(position).getStartTime()==null && classes.get(position).getWeekdays()==null){
+            rowView = inflater.inflate(R.layout.list_weekday, null);
+            holder.tv= rowView.findViewById(R.id.weekDay);
+            holder.tv.setText(classes.get(position).getSubject());
+        } else {
+            rowView = inflater.inflate(R.layout.list_classes, null);
+            holder.tv= rowView.findViewById(R.id.className);
+            holder.img= rowView.findViewById(R.id.subjectImg);
+            holder.tv.setText(classes.get(position).getName());
+            holder.img.setImageResource(R.drawable.ic_evernote);
+        }
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "You Clicked "+classes.get(position).getName(), Toast.LENGTH_LONG).show();
             }
         });
         return rowView;

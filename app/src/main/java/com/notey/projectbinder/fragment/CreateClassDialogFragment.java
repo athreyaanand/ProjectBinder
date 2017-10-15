@@ -67,10 +67,10 @@ public class CreateClassDialogFragment extends DialogFragment implements RadialT
     String[] subjects ={"CS","Science","Math","History","English","Other"};
 
     //Class Object Vars
-    String className;
+    String className = "";
     String subject = subjects[0];
-    String sTime;
-    String eTime;
+    String sTime = "";
+    String eTime = "";
     String weekdays = "";
 
     @NonNull
@@ -189,12 +189,12 @@ public class CreateClassDialogFragment extends DialogFragment implements RadialT
         RadioButton buttonSa = view.findViewById(R.id.radio6);
         RadioButton buttonSu = view.findViewById(R.id.radio7);
 
-        if(buttonM.isChecked()) weekdays+="Mo";
-        if(buttonT.isChecked()) weekdays+="Tu";
-        if(buttonW.isChecked()) weekdays+="We";
-        if(buttonTh.isChecked()) weekdays+="Th";
-        if(buttonF.isChecked()) weekdays+="Fr";
-        if(buttonSa.isChecked()) weekdays+="Sa";
-        if(buttonSu.isChecked()) weekdays+="Su";
+        if(buttonM.isChecked()) weekdays+="Su";
+        if(buttonT.isChecked()) weekdays+="Mo";
+        if(buttonW.isChecked()) weekdays+="Tu";
+        if(buttonTh.isChecked()) weekdays+="We";
+        if(buttonF.isChecked()) weekdays+="Th";
+        if(buttonSa.isChecked()) weekdays+="Fr";
+        if(buttonSu.isChecked()) weekdays+="Sa";
     }
 }

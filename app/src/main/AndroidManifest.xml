@@ -48,10 +48,12 @@
             android:theme="@style/Theme.Main" />
         <activity android:name=".activity.SandboxActivity"
             android:label="@string/sandbox"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="landscape"/>
         <activity android:name=".activity.PhotoActivity"
-            android:screenOrientation="landscape" />
+            android:theme="@style/Theme.Main"
+            android:screenOrientation="portrait" />
         <activity android:name=".activity.ImagePreviewActivity"
+            android:theme="@style/Theme.Main"
             android:screenOrientation="portrait" />
     </application>
 

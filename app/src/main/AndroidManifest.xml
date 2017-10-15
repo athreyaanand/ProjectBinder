@@ -55,6 +55,9 @@
         <activity android:name=".activity.ImagePreviewActivity"
             android:theme="@style/Theme.Main"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.ClassDetailsActivity"
+            android:theme="@style/Theme.Main"
+            android:screenOrientation="portrait" />
     </application>
 
     <uses-feature

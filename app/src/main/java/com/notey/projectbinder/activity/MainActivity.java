@@ -130,6 +130,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(this, SandboxActivity.class);
                 startActivity(i);
                 return true;
+            case R.id.action_camera:
+                Intent j = new Intent(this, PhotoActivity.class);
+                startActivity(j);
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);

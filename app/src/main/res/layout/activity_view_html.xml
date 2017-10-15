@@ -6,9 +6,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="?android:attr/colorPrimary"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:gravity="top"
+        >
+
+    </android.support.v7.widget.Toolbar>
+
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
+        android:layout_marginTop="100dp"
         android:layout_height="match_parent"/>
 
 </LinearLayout>

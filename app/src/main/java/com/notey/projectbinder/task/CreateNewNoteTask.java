@@ -99,6 +99,7 @@ public class CreateNewNoteTask extends BaseTask<Note> {
             return linkedNotebookHelper.createNoteInLinkedNotebook(note);
 
         } else {
+            System.out.println(note);
             EvernoteNoteStoreClient noteStoreClient = EvernoteSession.getInstance().getEvernoteClientFactory().getNoteStoreClient();
             return noteStoreClient.createNote(note);
         }

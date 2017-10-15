@@ -17,7 +17,7 @@
         android:layout_marginTop="0dp"
         app:srcCompat="?android:attr/actionModeCopyDrawable" />
     <ImageButton
-        android:id="@+id/btn_takepicture"
+        android:id="@+id/btn_check"
         android:src="@drawable/ic_done_white_36dp"
         android:background="@null"
         android:layout_width="wrap_content"

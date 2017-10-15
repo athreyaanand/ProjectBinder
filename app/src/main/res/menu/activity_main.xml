@@ -10,4 +10,8 @@
         android:id="@+id/action_sandbox"
         android:title="@string/label_sandbox"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_camera"
+        android:title="Camera"
+        app:showAsAction="never"/>
 </menu>

@@ -70,8 +70,11 @@
         <activity
             android:name=".activity.ClassDetailsActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
-        <activity android:name=".activity.PhotoActivity" />
-        <activity android:name=".activity.ImagePreviewActivity" />
+        <activity android:name=".activity.PhotoActivity"
+            android:label="Take Photo"
+            android:theme="@style/Theme.Main"/>
+        <activity android:name=".activity.ImagePreviewActivity"
+            android:theme="@style/Theme.Main" />
     </application>
 
 </manifest>

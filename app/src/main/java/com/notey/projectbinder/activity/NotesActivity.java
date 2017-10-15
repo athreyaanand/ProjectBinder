@@ -17,9 +17,6 @@ import com.evernote.edam.type.Notebook;
 
 import net.vrallev.android.task.TaskResult;
 
-/**
- * @author rwondratschek
- */
 public class NotesActivity extends AppCompatActivity {
 
     private static final String KEY_NOTEBOOK = "KEY_NOTEBOOK";

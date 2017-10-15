@@ -26,9 +26,6 @@ import net.vrallev.android.task.Task;
 import net.vrallev.android.task.TaskExecutor;
 import net.vrallev.android.task.TaskResult;
 
-/**
- * @author rwondratschek
- */
 public class CreateNoteDialogFragment extends DialogFragment {
 
     public static final int REQ_SELECT_IMAGE = 100;

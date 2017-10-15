@@ -23,9 +23,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-/**
- * @author rwondratschek
- */
 public class CreateNewNoteTask extends BaseTask<Note> {
 
     private final String mTitle;

@@ -36,4 +36,6 @@
     <string name="search">Search</string>
     <string name="query">Query</string>
     <string name="title_activity_calendar">CalendarActivity</string>
+
+    <string name="radial_time_picker_result_value">%1$d:%2$d</string>
 </resources>

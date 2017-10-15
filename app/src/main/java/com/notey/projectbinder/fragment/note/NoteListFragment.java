@@ -36,9 +36,6 @@ import net.vrallev.android.task.TaskResult;
 
 import java.util.List;
 
-/**
- * @author rwondratschek
- */
 @SuppressWarnings("FieldCanBeLocal")
 public class NoteListFragment extends Fragment {
 

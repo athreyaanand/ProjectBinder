@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.notey.projectbinder.ClassAdapter;
+import com.notey.projectbinder.Classperiod;
 import com.notey.projectbinder.R;
 import com.notey.projectbinder.activity.MainActivity;
 import com.notey.projectbinder.fragment.note.CreateNoteDialogFragment;
@@ -25,22 +26,23 @@ import com.evernote.edam.type.Note;
 
 import net.vrallev.android.task.TaskResult;
 
-public class ClassesFragment extends Fragment {
+import java.util.ArrayList;
+
+public class ClassesFragment extends Fragment implements CreateClassDialogFragment.OnCompleteListener {
 
     ListView lv;
     Context context;
 
-    public static int [] prgmImages={R.drawable.ic_evernote,R.drawable.ic_evernote,R.drawable.ic_evernote,R.drawable.ic_evernote,R.drawable.ic_evernote,R.drawable.ic_evernote};
-    public static String [] prgmNameList={"Math 1554","CS 1331","CS 1100","HTS 1080","ENGL 1101","INTA 1501"};
+    public static ArrayList<Classperiod> classList = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
-        if (prgmNameList == null) {
-            getChildFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, EmptyFragment.create("notes"))
+        if (classList == null || classList.isEmpty()) {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, EmptyFragment.create("Classes"))
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     .commit();
         }
@@ -49,20 +51,17 @@ public class ClassesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_note_list, container, false);
-        lv = (ListView) view.findViewById(R.id.listView);
 
-            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    //new GetNoteHtmlTask(mNoteRefList.get(position)).start(NoteListFragment.this, "html");
-                }
-            });
+        view.findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CreateClassDialogFragment ccdf = new CreateClassDialogFragment();
+                ccdf.setOnCompleteListener(ClassesFragment.this);
+                ccdf.show(getFragmentManager(), CreateClassDialogFragment.TAG);
+            }
+        });
 
-            lv.setAdapter(new ClassAdapter(getActivity(), prgmNameList, prgmImages));
-
-            registerForContextMenu(lv);
-
-            return view;
+        return view;
 
     }
 
@@ -78,20 +77,9 @@ public class ClassesFragment extends Fragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-
+    public void onComplete(Classperiod period) {
+        classList.add(period);
+        Toast.makeText(getContext(), period.getName()+"ADDED!", Toast.LENGTH_LONG).show();
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return true;
-    }
-
-    /*@Override
-    public void onFabClick() {
-        //TODO: Add class dialog
-        new CreateNoteDialogFragment().show(getChildFragmentManager(), CreateNoteDialogFragment.TAG);
-    }*/
-
 }
 

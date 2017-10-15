@@ -56,17 +56,12 @@ public class ViewHtmlActivity extends AppCompatActivity {
         mNoteRef = getIntent().getParcelableExtra(KEY_NOTE);
         mHtml = getIntent().getStringExtra(KEY_HTML);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(R.color.tb_text));
-
-        setSupportActionBar(toolbar);
-
-        if (!isTaskRoot()) {
+        /*if (!isTaskRoot()) {
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        getSupportActionBar().setTitle(mNoteRef.getTitle());
+        getSupportActionBar().setTitle(mNoteRef.getTitle());*/
 
         final WebView webView = (WebView) findViewById(R.id.webView);
 

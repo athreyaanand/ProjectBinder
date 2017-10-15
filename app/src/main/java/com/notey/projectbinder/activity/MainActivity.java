@@ -11,9 +11,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -86,17 +88,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        navigationView.getMenu().findItem(mSelectedNavItem).setChecked(true);
-
-//        mTextViewUserName = (TextView) findViewById(R.id.textView_user_name);
-//        findViewById(R.id.nav_drawer_header_container).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mUser != null) {
-//                    startActivity(UserInfoActivity.createIntent(MainActivity.this, mUser));
-//                }
-//            }
-//        });
 
         if (savedInstanceState == null) {
             showItem(mSelectedNavItem);

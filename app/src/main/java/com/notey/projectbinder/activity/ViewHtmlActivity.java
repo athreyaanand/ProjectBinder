@@ -57,8 +57,7 @@ public class ViewHtmlActivity extends AppCompatActivity {
         mHtml = getIntent().getStringExtra(KEY_HTML);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //toolbar.setTitleTextColor();
-        System.out.println(mHtml);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.tb_text));
 
         setSupportActionBar(toolbar);
 
@@ -66,7 +65,6 @@ public class ViewHtmlActivity extends AppCompatActivity {
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        System.out.println(mNoteRef.getTitle());
 
         getSupportActionBar().setTitle(mNoteRef.getTitle());
 

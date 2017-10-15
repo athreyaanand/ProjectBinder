@@ -40,6 +40,7 @@ public class ClassAdapter extends BaseAdapter {
     public class Holder
     {
         TextView tv;
+        TextView time;
         ImageView img;
     }
     @Override
@@ -54,7 +55,9 @@ public class ClassAdapter extends BaseAdapter {
             rowView = inflater.inflate(R.layout.list_classes, null);
             holder.tv= rowView.findViewById(R.id.className);
             holder.img= rowView.findViewById(R.id.subjectImg);
+            holder.time= rowView.findViewById(R.id.timePeriod);
             holder.tv.setText(classes.get(position).getName());
+            holder.time.setText(classes.get(position).getStartTime()+" - "+classes.get(position).getEndTime());
             holder.img.setImageResource(R.drawable.ic_evernote);
         }
         rowView.setOnClickListener(new View.OnClickListener() {

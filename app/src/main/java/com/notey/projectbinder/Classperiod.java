@@ -1,11 +1,11 @@
 package com.notey.projectbinder;
 
 public class Classperiod {
-    private String name;
-    private String startTime;
-    private String endTime;
-    private String weekdays;
-    private String subject;
+    private String name = "null";
+    private String startTime = "null";
+    private String endTime = "null";
+    private String weekdays = "null";
+    private String subject = "null";
 
     public Classperiod(String name, String startTime, String endTime, String weekdays, String subject){
         this.name = name;

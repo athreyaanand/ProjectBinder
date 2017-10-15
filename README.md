@@ -1,0 +1,15 @@
+## Inspiration
+How many times have you looked back at notes you’ve taken in a class? How many times have you lost your notes from any class? Do you still have notes from last semester to reference? If you answered zero or no to any of these questions, Binder is the app for you! The team here aimed to create a utility with which all students could store their notes from class on a multi platform storage application. Never again would you need to carry around a backpack full of notebooks and loose paper full of scribbles; all you need is your Binder.
+## What it does
+The application integrates a high-level object detection algorithm that automatically recognizes a set of notes within a picture and seamlessly crops it out without losing much quality. The platform then continues to beautifully integrate it into your evernote account and maintains “notebooks” for each of your classes in which lie the notes produced by our image extraction algorithm. On top of all of that, the app also stores the user’s class schedule and throws a notification at the end of every class to remind the user to upload his notes to the cloud. No more physical notes!!
+## How I built it
+The main tools we used were Android Studio, the Evernote API, and the OpenCV image recognition library. Both platforms incorporated Java, thus making it the primary language of the project.
+## Challenges I ran into
+OpenCV was easily one of the greater challenges faced, since it is such an extensive library requiring a good understanding of vectors and points on a visual plane. the most difficult portion was overriding the default OpenCV camera view and creating a portrait mode frame, which needed a combination of image recognition calculations and Google's own camera API to create a friendly user interface.
+On the app/visual end of the project, handling fragments and the data flow between them was easily one of the harder implementations done in the project. This took careful structuring and a proper hierarchy of files in order for optimal followability. The evernote SDK was also a little painful due to all the tasks we had to create and implement.
+## Accomplishments that I'm proud of
+When we successfully were able to extract white rectangles using the OpenCV library, our team was almost on the verge of tears. Never have I been more excited about a rectangle in my life...
+## What I learned
+In the end, we learned more about the implementation of the OpenCV library in projects. More specifically, object recognition and image transformation. We also were able to gain a lot of experience with the Evernote API and its plethora of complexities.
+## What's next for Project Binder
+	The sky is the limit for Binder. After the hackathon, we will try our best to push the project into production and beautify the UI as much as possible. We will also consider additional features for the user's convenience. Hopefully, one day we can grow to the point where we don’t need to depend on Evernote and build our own note database.

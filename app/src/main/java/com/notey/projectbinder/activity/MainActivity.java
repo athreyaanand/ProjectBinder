@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             showItem(mSelectedNavItem);
             new GetUserTask().start(this);
-
         } else if (mUser != null) {
             onGetUser(mUser);
         }

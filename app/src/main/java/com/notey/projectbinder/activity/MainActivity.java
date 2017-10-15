@@ -126,6 +126,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_logout:
                 Util.logout(this);
                 return true;
+            case R.id.action_sandbox:
+                Intent i = new Intent(this, SandboxActivity.class);
+                startActivity(i);
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);

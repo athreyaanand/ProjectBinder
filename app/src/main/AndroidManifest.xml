@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.notey.projectbinder">
+
+    <uses-sdk android:minSdkVersion="8" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-feature android:name="android.hardware.camera2.full" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MasterApp"
@@ -37,31 +64,14 @@
             android:name=".activity.ViewHtmlActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/Theme.Main" />
-        <activity android:name=".activity.SandboxActivity"
-            android:label="@string/sandbox"></activity>
-        <activity android:name=".activity.PhotoActivity"></activity>
-        <activity android:name=".activity.ImagePreviewActivity"></activity>
+        <activity
+            android:name=".activity.SandboxActivity"
+            android:label="@string/sandbox" />
+        <activity
+            android:name=".activity.ClassDetailsActivity"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity android:name=".activity.PhotoActivity" />
+        <activity android:name=".activity.ImagePreviewActivity" />
     </application>
-    <supports-screens
-        android:anyDensity="true"
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:resizeable="true"
-        android:smallScreens="true" />
-
-    <uses-sdk android:minSdkVersion="8" />
-
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="true" />
-    <uses-feature
-        android:name="android.hardware.camera.autofocus"
-        android:required="false" />
-    <uses-feature
-        android:name="android.hardware.camera.front"
-        android:required="false" />
-    <uses-feature
-        android:name="android.hardware.camera.front.autofocus"
-        android:required="false" />
 
 </manifest>

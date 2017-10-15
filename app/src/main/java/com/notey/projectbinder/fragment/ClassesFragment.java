@@ -1,6 +1,7 @@
 package com.notey.projectbinder.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.notey.projectbinder.ClassAdapter;
 import com.notey.projectbinder.R;
+import com.notey.projectbinder.activity.ClassDetailsActivity;
 import com.notey.projectbinder.activity.MainActivity;
 import com.notey.projectbinder.fragment.note.CreateNoteDialogFragment;
 import com.notey.projectbinder.util.ViewUtil;

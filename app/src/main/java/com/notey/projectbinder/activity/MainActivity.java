@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         Resources resources = getResources();
 
-        mSelectedNavItem = R.id.nav_item_notes;
+        mSelectedNavItem = R.id.nav_item_classes;
         if (savedInstanceState != null) {
             mSelectedNavItem = savedInstanceState.getInt(KEY_SELECTED_NAV_ITEM, mSelectedNavItem);
             mUser = (User) savedInstanceState.getSerializable(KEY_USER);

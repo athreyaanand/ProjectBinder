@@ -2,6 +2,7 @@ package com.notey.projectbinder;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.notey.projectbinder.activity.ClassDetailsActivity;
+import com.notey.projectbinder.activity.MainActivity;
 
 /**
  * Created by athreyaanand on 10/14/17.
@@ -65,6 +69,9 @@ public class ClassAdapter extends BaseAdapter {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                Intent i = new Intent(context, ClassDetailsActivity.class);
+                i.putExtra("Title", result[position]);
+                context.startActivity(i);
             }
         });
         return rowView;

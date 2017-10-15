@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_item_classes"
+            android:icon="@drawable/ic_evernote"
+            android:title="Classes"/>
+        <item
             android:id="@+id/nav_item_notes"
             android:icon="@drawable/ic_note"
             android:title="@string/notes"/>
@@ -9,9 +13,5 @@
             android:id="@+id/nav_item_notebooks"
             android:icon="@drawable/ic_notebook"
             android:title="@string/notebooks"/>
-        <item
-            android:id="@+id/nav_item_classes"
-            android:icon="@drawable/ic_evernote"
-            android:title="Classes"/>
     </group>
 </menu>

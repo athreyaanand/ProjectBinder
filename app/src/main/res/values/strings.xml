@@ -12,6 +12,7 @@
     <string name="notes">Notes</string>
     <string name="notebooks">Notebooks</string>
     <string name="label_logout">Sign out</string>
+    <string name="label_sandbox">Sandbox</string>
     <string name="user_info">User Info</string>
     <string name="label_login">Login</string>
     <string name="empty">Empty %s</string>

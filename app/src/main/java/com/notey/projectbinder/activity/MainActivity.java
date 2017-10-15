@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         Resources resources = getResources();
 
-        mSelectedNavItem = R.id.nav_item_notes;
+        mSelectedNavItem = R.id.nav_item_classes;
         if (savedInstanceState != null) {
             mSelectedNavItem = savedInstanceState.getInt(KEY_SELECTED_NAV_ITEM, mSelectedNavItem);
             mUser = (User) savedInstanceState.getSerializable(KEY_USER);
@@ -125,6 +125,14 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_logout:
                 Util.logout(this);
+                return true;
+            case R.id.action_sandbox:
+                Intent i = new Intent(this, SandboxActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.action_camera:
+                Intent j = new Intent(this, PhotoActivity.class);
+                startActivity(j);
                 return true;
 
             default:

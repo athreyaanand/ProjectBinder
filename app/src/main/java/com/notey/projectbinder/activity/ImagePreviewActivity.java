@@ -36,11 +36,7 @@ import java.sql.Date;
 
 public class ImagePreviewActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
     private Bitmap bmp;
-    private Parcel parcel;
-    private Notebook mNotebook;
-    private LinkedNotebook mLinkedNotebook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

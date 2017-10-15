@@ -1,6 +1,7 @@
 package com.notey.projectbinder.activity;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -18,21 +19,30 @@ import org.w3c.dom.Text;
 
 public class ClassDetailsActivity extends AppCompatActivity {
 
-    TextView toolbarTitle;
+    TextView toolbarTitle, details;
     Toolbar activityToolbar;
+    private String name, startDate, endDate, subject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_details);
-        String title = getIntent().getStringExtra("Title");
+        name = getIntent().getStringExtra("Name");
+        startDate = getIntent().getStringExtra("StartDate");
+        endDate = getIntent().getStringExtra("EndDate");
+        subject = getIntent().getStringExtra("Subject");
 
         toolbarTitle = (TextView) findViewById(R.id.class_toolbar_title);
-        toolbarTitle.setText(title);
+        toolbarTitle.setText(name);
+
+        details = (TextView) findViewById(R.id.class_info);
+        details.setText(subject + " \n\n" + startDate + " - " + endDate);
 
         activityToolbar = (Toolbar) findViewById(R.id.class_toolbar);
         activityToolbar.setTitle("");
-        activityToolbar.setBackground(getResources().getDrawable(R.drawable.class_history_background));
+        activityToolbar.setBackground(getHeaderImage());
+        if(getHeaderImage() == null)
+        activityToolbar.setBackgroundColor(getResources().getColor(R.color.tb_bg));
         setSupportActionBar(activityToolbar);
 
 
@@ -49,6 +59,22 @@ public class ClassDetailsActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private Drawable getHeaderImage() {
+        switch(subject) {
+            case "Math":
+                return getResources().getDrawable(R.drawable.class_math_background);
+            case "English":
+                return getResources().getDrawable(R.drawable.class_lit_background);
+            case "Science":
+                return getResources().getDrawable(R.drawable.class_science_background);
+            case "History":
+                return getResources().getDrawable(R.drawable.class_history_background);
+            case "CS":
+                return getResources().getDrawable(R.drawable.class_cs_background);
+            default:
+                return null;
+        }
     }
     private void setupActionBar() {
         ActionBar ab = getSupportActionBar();
